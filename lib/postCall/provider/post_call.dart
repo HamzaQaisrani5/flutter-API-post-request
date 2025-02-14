@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+
 //Post request class
 class Postcall extends ChangeNotifier {
   //Define a variable to return sent data body
@@ -29,9 +30,8 @@ class Postcall extends ChangeNotifier {
               "Title": "QA Eng",
               "Hair": {"Color": "Black", "Type": "Silky"},
             },
-
           ]));
-          //Utilize upper defined var for send Data body
+      //Utilize upper defined var for send Data body
       response = sentData.body;
       log("Send Data statuscode: ${sentData.statusCode}");
       log("Response: $response");

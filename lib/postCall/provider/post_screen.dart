@@ -9,17 +9,17 @@ class PostScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('API Post Call',
-        style: TextStyle(
-          color: Colors.white
-        ),),
+        title: const Text(
+          'API Post Call',
+          style: TextStyle(color: Colors.white),
+        ),
       ),
       body: Center(
         child: Provider.of<Postcall>(context, listen: true).response == null
             ? const CircularProgressIndicator()
             : Consumer<Postcall>(
                 builder: (context, postcall, child) => ListView.builder(
-                  padding:const EdgeInsets.all(15),
+                    padding: const EdgeInsets.all(15),
                     itemCount: 1,
                     itemBuilder: (context, index) {
                       var title = postcall.response ?? 'N/A';

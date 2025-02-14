@@ -6,12 +6,13 @@ import 'package:provider/provider.dart';
 
 //main function
 void main() => runApp(
-  //Global class of project
-  ChangeNotifierProvider<Postcall>(
-    //context of Post request class
+        //Global class of project
+        ChangeNotifierProvider<Postcall>(
+      //context of Post request class
       create: (_) => Postcall(),
       child: const MyApp(),
     ));
+
 //MyApp class basic class
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -25,7 +26,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     SchedulerBinding.instance.addPostFrameCallback(
-      //Given context of Postcall class
+        //Given context of Postcall class
         (_) => Provider.of<Postcall>(context, listen: false).postCall());
     super.initState();
   }
@@ -36,26 +37,21 @@ class _MyAppState extends State<MyApp> {
         debugShowCheckedModeBanner: false,
         //Decorating globally all UI Widgets using in project
         theme: ThemeData(
-          progressIndicatorTheme: ProgressIndicatorThemeData(
-            color: Colors.blue[300]
-          ),
+            progressIndicatorTheme:
+                ProgressIndicatorThemeData(color: Colors.blue[300]),
             scaffoldBackgroundColor: Colors.white,
             //Appbar detailing
-            appBarTheme:const AppBarTheme(
-                backgroundColor:  Color.fromARGB(255, 95, 167, 227),
+            appBarTheme: const AppBarTheme(
+                backgroundColor: Color.fromARGB(255, 95, 167, 227),
                 centerTitle: true,
                 elevation: 15),
-                //List tile detailing
+            //List tile detailing
             listTileTheme: ListTileThemeData(
-                shape:const OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(12)),
-                  borderSide: BorderSide(
-                    color: Colors.black,
-                    width: 0.5
-                  )
-                ),
+                shape: const OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(12)),
+                    borderSide: BorderSide(color: Colors.black, width: 0.5)),
                 tileColor: Colors.blue[300])),
-                //Calling PostScreen class for UI
+        //Calling PostScreen class for UI
         home: const PostScreen());
   }
 }
