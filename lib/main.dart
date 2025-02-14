@@ -55,24 +55,3 @@ class _MyAppState extends State<MyApp> {
         home: const PostScreen());
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-  //     home: Scaffold(
-  //       body: FutureBuilder<dynamic>(
-  //         future: httpClient.multipleRequest(), 
-  //         builder:((context, snapshot){
-  //          return Center(child: Text(httpClient.title??'waiting'));
-  //         } 
-  //         ),
-  //     ),
-  //   ));
-  // }
